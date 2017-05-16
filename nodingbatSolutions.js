@@ -111,3 +111,129 @@ console.log(makes10(8, 2));
 console.log(makes10(8, 3));	
 console.log(makes10(10, 42));	
 console.log(makes10(12, -2));
+
+// We have a loud talking parrot. The 'hour' parameter is the current hour
+// time in the range 0..23. We are in trouble if the parrot is talking and
+// the hour is before 7 or after 20.
+// Return True if we are in trouble.
+
+function parrotTrouble(talking, hour) {
+  if(talking == true && (hour < 7 || hour > 20)){
+  	return true;
+  }
+  if (talking == false && (hour < 7 || hour > 20)){
+  	return false;
+  }
+  else {
+    return false;
+  }
+}
+//execute when file is called in console
+console.log(parrotTrouble(true, 6));
+console.log(parrotTrouble(true, 7));
+console.log(parrotTrouble(false, 6));	
+console.log(parrotTrouble(true, 21));
+console.log(parrotTrouble(false, 21));
+console.log(parrotTrouble(true, 23));	
+console.log(parrotTrouble(false, 23));
+console.log(parrotTrouble(true, 20));	
+console.log(parrotTrouble(false, 12));
+
+// The parameter weekday is true if it is a weekday, and the parameter vacation is true if we are on vacation. 
+//We sleep in if it is not a weekday or we're on vacation. Return true if we sleep in.
+function sleepIn(weekday, vacation){ 
+	if (weekday == false && vacation == true){
+    	return true;
+    }
+  	else if (weekday == true && vacation == false){
+    	return false;
+    }
+  
+  	else {
+    return true;
+    }
+}
+// Given an int n, return the absolute difference between n and 21, except return double the absolute difference if n is over 21.
+function diff21(n){ 
+	if (n > 21){
+      var ans = ((n-21)*2);
+    	return ans;
+    }
+	else {
+      ans = 21-n;
+      return ans;
+	}
+}
+// We'll say that a number is 'teen' if it is in the range 13..19 inclusive. Given 3 int values, return true if 1 or more of them are teen.
+function hasTeen(a, b, c){ 
+  	if (a >= 13 && a <= 19){
+    	return true;
+    }
+  	else if (b >= 13 && b <=19){
+    	return true;
+    }
+  	else if (c >=13 && c <=19){
+    	return true;
+    }
+  	else {
+    	return false;
+    } 
+}
+// Given a string, return true if the string starts with 'hi' and false otherwise.
+function startHi(str){ 
+    if (str.match(/^hi/)){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+// Given an int n, return True if it is within 10 of 100 or 200.
+function nearHundred(n){
+    if (n >= 90 && n <= 110){
+        return true;
+    }
+    else if (n >= 190 && n <= 210){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+// Given a non-empty string and an int n, return a new string where the char at index n has been removed. 
+// The value of n will be a valid index of a char in the original string
+function missingChar(str, n){ 
+	var rmvchar = str.charAt(n);
+  	return str.replace(rmvchar, '');
+}
+// Given a string, take the last char and return a new string with the last char added at the front and back, 
+//so 'cat' yields 'tcatt' the original string will be length 1 or more.
+function backAround(str){ 
+  var lastchar = str.charAt(str.length-1);
+  
+  return lastchar + str + lastchar;
+ 
+}
+// Return true if the given string begins with 'mix', except the 'm' can be anything, so 'pix', '9ix' .. all count.
+function mixStart(str){ 
+	if (str.match(/\wix/)){
+    	return true;
+    }
+  	else {
+    	return false;
+    }
+}
+// Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
+function nonStart(a, b) {   	
+  	return a.slice(1) + b.slice(1);	
+}	
+// Given 2 strings, a and b, return a string of the form short+long+short, with  the shorter string on the outside and the 
+// longer string on the inside. The strings will not be the same length, but they may be empty (length 0).
+function comboString(a, b) { 
+	if (a.length < b.length){
+		return a + b + a;    
+    }
+  	else if (b.length < a.length){
+    	return b + a + b;
+    }
+}
