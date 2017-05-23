@@ -271,13 +271,13 @@ function left2(str) {
 }
 // Given a string, return a 'rotated right 2' version where the last 2 chars are
 // moved to the start. The string length will be at least 2.
-var right2=function(str) {
+function right2(str) {
   var last2 = str.slice(-2, str.length);
   var restof = str.slice(0, str.length-2);
   return last2 + restof;
 }
 // Given a string, return true if it ends in 'ly'.
-var endsLy=function(str) {
+function endsLy(str) {
 	if (str.endsWith('ly')){
     	return true;
     }
